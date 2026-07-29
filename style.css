@@ -64,6 +64,8 @@ body{
 
     color:white;
 
+    max-height:90vh;
+
     animation:fadeUp 1.2s ease;
 
     z-index:2;
@@ -1445,5 +1447,475 @@ body{
 
     }
 
+
+}
+
+/* ==========================================
+   FARM JOURNAL LOADING CARD
+========================================== */
+
+
+.farm-journal{
+
+    width:340px;
+
+    margin:25px auto 0;
+
+
+    background:
+
+    linear-gradient(
+        #fff2c7,
+        #e8c982
+    );
+
+
+    border:5px solid #6a3f17;
+
+
+    border-radius:16px;
+
+
+    padding:18px;
+
+
+    color:#43270f;
+
+
+    box-shadow:
+
+        0 7px 0 #5b3516,
+        0 15px 25px rgba(0,0,0,.35);
+
+
+    animation:
+
+        journalFade 2s ease,
+        journalFloat 4s ease-in-out infinite;
+
+
+    position:relative;
+
+}
+
+
+/* little paper texture */
+
+.farm-journal::before{
+
+    content:"";
+
+
+    position:absolute;
+
+    inset:8px;
+
+
+    border:2px dashed rgba(106,63,23,.25);
+
+
+    border-radius:10px;
+
+
+    pointer-events:none;
+
+}
+
+
+
+.journal-title{
+
+
+    font-size:14px;
+
+
+    text-align:center;
+
+
+    color:#fff7d7;
+
+
+    text-shadow:
+
+        2px 2px #6a3f17;
+
+
+    margin-bottom:12px;
+
+}
+
+
+
+.journal-divider{
+
+
+    height:3px;
+
+
+    background:#8f5d2b;
+
+
+    margin-bottom:12px;
+
+}
+
+
+
+.journal-day{
+
+
+    text-align:center;
+
+
+    font-size:10px;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.journal-note{
+
+
+    text-align:center;
+
+
+    font-size:10px;
+
+
+    line-height:1.8;
+
+}
+
+
+
+@keyframes journalFade{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+@keyframes journalFloat{
+
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
+
+}
+
+/* ==========================================
+   MAILBOX
+========================================== */
+
+
+#mailbox{
+
+    position:absolute;
+
+    left:10%;
+
+    bottom:12%;
+
+
+    width:75px;
+
+    height:75px;
+
+
+    background:#b94b3f;
+
+
+    border:5px solid #6a3f17;
+
+
+    border-radius:12px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:38px;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+
+        0 8px #5b3516,
+        0 15px 25px rgba(0,0,0,.35);
+
+
+    animation:
+
+        mailboxFloat 3s ease-in-out infinite;
+
+
+    z-index:10;
+
+}
+
+
+
+#mailbox:hover{
+
+    transform:scale(1.15) rotate(-5deg);
+
+    filter:brightness(1.15);
+
+}
+
+
+
+.mail-label{
+
+    position:absolute;
+
+    bottom:-35px;
+
+
+    font-size:10px;
+
+    color:white;
+
+    opacity:.8;
+
+}
+
+
+
+
+@keyframes mailboxFloat{
+
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+
+/* ==========================================
+   LOVE LETTER POPUP
+========================================== */
+
+
+#letter-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+
+    background:rgba(0,0,0,.55);
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    z-index:50;
+
+
+}
+
+
+
+#letter-overlay.hidden{
+
+    display:none;
+
+}
+
+
+
+.love-letter{
+
+    width:420px;
+
+
+    max-width:90%;
+
+
+    background:
+
+    linear-gradient(
+        #fff5d5,
+        #e7c77c
+    );
+
+
+    border:7px solid #6a3f17;
+
+
+    border-radius:18px;
+
+
+    padding:35px;
+
+
+    color:#43270f;
+
+
+    text-align:center;
+
+
+    box-shadow:
+
+        0 10px #5b3516,
+        0 20px 40px rgba(0,0,0,.5);
+
+
+    animation:
+
+        letterOpen .8s ease;
+
+}
+
+
+
+.love-letter h2{
+
+    color:#fff7d7;
+
+
+    text-shadow:
+
+        2px 2px #6a3f17;
+
+
+    font-size:16px;
+
+}
+
+
+
+.letter-divider{
+
+    height:3px;
+
+    background:#8f5d2b;
+
+    margin:20px 0;
+
+}
+
+
+
+.love-letter p{
+
+    font-size:11px;
+
+    line-height:2;
+
+}
+
+
+
+#close-letter{
+
+    position:absolute;
+
+    margin-left:350px;
+
+
+    border:none;
+
+
+    background:#b94b3f;
+
+
+    color:white;
+
+
+    width:35px;
+
+    height:35px;
+
+
+    border-radius:50%;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+@keyframes letterOpen{
+
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        scale(.7)
+
+        translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        scale(1)
+
+        translateY(0);
+
+    }
 
 }

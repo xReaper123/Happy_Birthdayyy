@@ -187,6 +187,8 @@ clickSound.play();
 
 });
 
+
+
 // ==========================================
 // ENABLE MUSIC AFTER FIRST CLICK
 // ==========================================
@@ -412,6 +414,46 @@ rachelTrigger.onclick = ()=>{
 
     },2200);
 
+
+
+};
+
+// ==========================================
+// MAILBOX LETTER
+// ==========================================
+
+
+const mailbox = document.getElementById("mailbox");
+
+const letterOverlay =
+document.getElementById("letter-overlay");
+
+const closeLetter =
+document.getElementById("close-letter");
+
+
+
+mailbox.onclick = ()=>{
+
+
+    clickSound.currentTime=0;
+
+    clickSound.volume=.5;
+
+    clickSound.play();
+
+
+    letterOverlay.classList.remove("hidden");
+
+
+};
+
+
+
+closeLetter.onclick = ()=>{
+
+
+    letterOverlay.classList.add("hidden");
 
 
 };

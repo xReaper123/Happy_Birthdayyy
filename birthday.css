@@ -1,0 +1,719 @@
+/* =====================================
+   GLOBAL
+===================================== */
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+body{
+
+    width:100%;
+
+    height:100vh;
+
+
+    overflow:hidden;
+
+
+    font-family:"Press Start 2P", cursive;
+
+
+}
+
+
+
+
+
+
+/* =====================================
+   DAY TRANSITION
+===================================== */
+
+
+#day-transition{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:#000;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    z-index:20;
+
+
+    animation:
+
+    fadeOutDay 3s ease forwards;
+
+
+    animation-delay:3s;
+
+
+}
+
+
+
+.day-card{
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    font-size:18px;
+
+
+    line-height:2;
+
+
+    animation:
+
+    dayFloat 2s infinite;
+
+
+}
+
+
+
+.day-card span{
+
+
+    font-size:11px;
+
+
+    opacity:.8;
+
+
+}
+
+
+
+
+
+@keyframes fadeOutDay{
+
+
+    to{
+
+
+        opacity:0;
+
+
+        visibility:hidden;
+
+
+    }
+
+
+}
+
+
+
+@keyframes dayFloat{
+
+
+    50%{
+
+
+        transform:translateY(-10px);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+/* =====================================
+   BIRTHDAY BACKGROUND
+===================================== */
+
+
+#birthday-screen{
+
+
+    width:100%;
+
+
+    height:100vh;
+
+
+    position:relative;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    background:
+
+    url("assets/bird.gif");
+
+
+
+    background-size:cover;
+
+
+    background-position:center;
+
+
+
+    animation:
+
+    morningFade 3s ease;
+
+
+}
+
+
+
+
+
+.overlay{
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+
+    background:
+
+    linear-gradient(
+
+        rgba(255,220,140,.25),
+
+        rgba(255,240,180,.12)
+
+    );
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   MUSIC BUTTON
+===================================== */
+
+
+#music-toggle{
+
+
+    position:absolute;
+
+
+    top:25px;
+
+
+    left:25px;
+
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+
+    border-radius:12px;
+
+
+    border:5px solid #6a3f17;
+
+
+
+    background:
+
+    linear-gradient(
+
+        #f7d98c,
+
+        #dbab63
+
+    );
+
+
+
+    font-size:22px;
+
+
+    cursor:pointer;
+
+
+
+    z-index:5;
+
+
+
+    box-shadow:
+
+
+    0 6px #5b3516;
+
+
+
+}
+
+
+
+#music-toggle:hover{
+
+
+    transform:scale(1.1);
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   WEATHER BOX
+===================================== */
+
+
+.weather-box{
+
+
+    position:absolute;
+
+
+    top:25px;
+
+
+    right:25px;
+
+
+
+    width:160px;
+
+
+
+    padding:15px;
+
+
+
+    text-align:center;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        #f8dfa0,
+
+        #d7a45b
+
+    );
+
+
+
+    border:5px solid #6a3f17;
+
+
+
+    border-radius:15px;
+
+
+
+    color:#43270f;
+
+
+
+    font-size:11px;
+
+
+
+    box-shadow:
+
+
+    0 7px #5b3516;
+
+
+
+    z-index:5;
+
+
+
+}
+
+
+
+.weather-box span{
+
+
+    font-size:8px;
+
+
+    line-height:2;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   CONTENT
+===================================== */
+
+
+.morning-content{
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+h1{
+
+
+    font-size:30px;
+
+
+
+    text-shadow:
+
+
+    4px 4px #6a3f17;
+
+
+
+}
+
+
+
+.subtitle{
+
+
+    margin-top:20px;
+
+
+    font-size:11px;
+
+
+    text-shadow:
+
+
+    2px 2px #6a3f17;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   CHARACTER
+===================================== */
+
+
+.character img{
+
+
+    width:180px;
+
+
+    margin-top:25px;
+
+
+
+    filter:
+
+
+    drop-shadow(
+
+        0 8px 8px rgba(0,0,0,.4)
+
+    );
+
+
+
+    animation:
+
+
+    characterFloat 3s ease-in-out infinite;
+
+
+}
+
+
+
+
+
+@keyframes characterFloat{
+
+
+    50%{
+
+
+        transform:translateY(-10px);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   MESSAGE BOX
+===================================== */
+
+
+.message-box{
+
+
+    width:380px;
+
+
+    max-width:90vw;
+
+
+    margin:25px auto;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        #fff5d5,
+
+        #e7c77c
+
+    );
+
+
+
+    border:6px solid #6a3f17;
+
+
+    border-radius:18px;
+
+
+
+    padding:25px;
+
+
+
+    color:#43270f;
+
+
+
+    font-size:10px;
+
+
+
+    line-height:2;
+
+
+
+    box-shadow:
+
+
+    0 8px #5b3516;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   CONTINUE BUTTON
+===================================== */
+
+
+#continue-button{
+
+
+    padding:18px 40px;
+
+
+
+    font-family:"Press Start 2P";
+
+
+
+    font-size:12px;
+
+
+
+    color:#43270f;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        #f7d98c,
+
+        #dbab63
+
+    );
+
+
+
+    border:
+
+
+    5px solid #6a3f17;
+
+
+
+    border-radius:15px;
+
+
+
+    cursor:pointer;
+
+
+
+    box-shadow:
+
+
+    0 7px #5b3516;
+
+
+
+    transition:.2s;
+
+
+}
+
+
+
+
+
+#continue-button:hover{
+
+
+    transform:
+
+    translateY(-5px);
+
+
+}
+
+
+
+
+
+#continue-button:active{
+
+
+    transform:
+
+    translateY(4px);
+
+
+}
+
+
+
+@keyframes morningFade{
+
+
+    from{
+
+        filter:brightness(.6);
+
+    }
+
+
+    to{
+
+        filter:brightness(1);
+
+    }
+
+
+}
