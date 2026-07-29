@@ -205,26 +205,16 @@ body{
 
 
 .overlay{
-
-
     position:absolute;
-
-
     inset:0;
 
-
-
     background:
-
     linear-gradient(
-
         rgba(255,220,140,.25),
-
         rgba(255,240,180,.12)
-
     );
 
-
+    pointer-events: none;
 }
 
 
@@ -715,5 +705,90 @@ h1{
 
     }
 
+
+}
+
+.overlay{
+    z-index:1;
+}
+
+.morning-content{
+    position:relative;
+    z-index:2;
+}
+
+#music-toggle{
+    position:absolute;
+    z-index:100;
+}
+
+.weather-box{
+    position:absolute;
+    z-index:100;
+}
+
+/* =====================================
+   PAGE FADE TRANSITION
+===================================== */
+
+
+#page-transition{
+
+    position:fixed;
+
+    inset:0;
+
+    background:black;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    transition:
+
+    opacity 1s ease;
+
+}
+
+
+
+#page-transition.fade-out{
+
+    opacity:1;
+
+}
+
+/* =====================================
+   PAGE FADE TRANSITION
+===================================== */
+
+
+#page-fade{
+
+    position:fixed;
+
+    inset:0;
+
+    background:black;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    transition:opacity 1s ease;
+
+}
+
+
+
+#page-fade.active{
+
+    opacity:1;
+
+    pointer-events:auto;
 
 }

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rachel's Valley</title>
+
+    <link rel="stylesheet" href="farm.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================
+     HUD
+=========================== -->
+
+<div id="hud">
+
+    <div id="day">
+
+        🌞 Summer 29
+
+        <br>
+
+        Year 1
+
+        <br>
+
+        8:00 AM
+
+    </div>
+
+
+    <div id="player-info">
+
+        ❤️ Rachel
+
+    </div>
+
+</div>
+
+
+
+
+<!-- ==========================
+     GAME WORLD
+=========================== -->
+
+
+<div id="game">
+
+
+    <!-- Background -->
+
+    <img
+    id="background"
+    src="assets/background-game.jpg"
+    alt="Farm Background">
+
+
+
+    <!-- Player -->
+
+    <img
+    id="player"
+    src="assets/rachel.png"
+    alt="Rachel">
+
+
+
+    <!-- Mailbox -->
+
+    <img
+    class="object mailbox"
+    src="assets/mail.png"
+    alt="Mailbox">
+
+
+
+
+
+    <!-- Flowers -->
+
+    <img
+    class="object flower flower1"
+    src="assets/flower.gif"
+    alt="Flower">
+
+
+    <img
+    class="object flower flower2"
+    src="assets/flower.gif"
+    alt="Flower">
+
+
+    <img
+    class="object flower flower3"
+    src="assets/flower.gif"
+    alt="Flower">
+
+
+
+
+
+    <!-- Gift -->
+
+    <img
+    class="object gift"
+    src="assets/gift.png"
+    alt="Gift">
+
+
+
+
+
+    <!-- Picnic -->
+
+    <img
+    class="object picnic"
+    src="assets/dog.png"
+    alt="Picnic">
+
+
+</div>
+
+
+
+
+
+
+<!-- ==========================
+     INTERACTION
+=========================== -->
+
+
+<div id="interaction">
+
+    Press E
+
+</div>
+
+
+
+
+
+
+<!-- ==========================
+     QUEST TRACKER
+=========================== -->
+
+
+<div id="quest-box">
+
+<h3>
+Today's Goals
+</h3>
+
+
+<div class="quest-item">
+
+<div class="quest-icon letter-icon">
+    ✉
+</div>
+
+<span id="quest-letter">
+Read your birthday letter
+</span>
+
+</div>
+
+
+
+<div class="quest-item">
+
+<div class="quest-icon flower-icon">
+    🌻
+</div>
+
+<span id="quest-flowers">
+Pick 3 flowers
+</span>
+
+</div>
+
+
+
+
+<div class="quest-item">
+
+<div class="quest-icon gift-icon">
+    🎁
+</div>
+
+<span id="quest-gift">
+Open your birthday present
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- ==========================
+     BIRTHDAY LETTER
+=========================== -->
+
+
+<div id="dialogue-screen">
+
+
+<div id="dialogue-box">
+
+
+<h2>
+
+📬 Birthday Letter
+
+</h2>
+
+
+
+
+<p id="dialogue-text">
+
+
+Dear Rachel,
+
+
+<br><br>
+
+
+Happy Birthday. 🌻
+
+
+<br><br>
+
+
+Today isn't just another day in the valley.
+
+
+<br><br>
+
+
+Every flower bloomed a little brighter.
+
+Every bird sang a little sweeter.
+
+Every breeze feels warmer.
+
+
+<br><br>
+
+
+Because today...
+
+<br>
+
+is your birthday.
+
+
+<br><br>
+
+
+Thank you for filling my life with so much happiness.
+
+
+<br><br>
+
+
+I hope you enjoy this little adventure in the valley I created just for you.
+
+
+<br><br>
+
+
+❤️ Love,
+
+
+<br>
+
+
+Alfredo
+
+
+</p>
+
+
+
+
+
+
+<button id="close-dialogue">
+
+Continue 🌻
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ==========================
+     FLOWER PICKUP POPUP
+=========================== -->
+
+
+<div id="flower-dialogue">
+
+
+<div class="popup-box gift-popup">
+
+
+<h2 id="popup-title">
+
+🌻 Flower Collected
+
+</h2>
+
+
+
+
+<p id="flower-text">
+
+</p>
+
+
+
+
+<button id="flower-close">
+
+Continue
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ==========================
+     AUDIO
+=========================== -->
+
+
+<audio id="pickup-sound">
+
+<source src="assets/pickup.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<audio id="open-sound">
+
+<source src="assets/open.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<audio id="button-hover">
+
+<source src="assets/button-hover.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<audio id="button-click">
+
+<source src="assets/button-click.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<!-- Background Music -->
+
+<audio id="background-music" loop>
+
+    <source src="assets/music.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+
+<!-- ==========================
+     JAVASCRIPT
+=========================== -->
+
+
+<script src="farm.js"></script>
+
+
+
+</body>
+
+
+</html>

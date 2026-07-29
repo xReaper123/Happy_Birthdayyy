@@ -85,11 +85,39 @@ const continueButton =
 document.getElementById("continue-button");
 
 
+const transition =
+document.getElementById("page-transition");
 
-continueButton.onclick=()=>{
 
+
+continueButton.addEventListener("click",()=>{
+
+
+    // button press animation
 
     continueButton.style.transform="scale(.9)";
+
+
+
+    // play click sound
+
+    const clickSound =
+    document.getElementById("click-sound");
+
+
+    if(clickSound){
+
+        clickSound.currentTime = 0;
+
+        clickSound.play();
+
+    }
+
+
+
+    // fade screen
+
+    transition.classList.add("fade-out");
 
 
 
@@ -99,8 +127,24 @@ continueButton.onclick=()=>{
         window.location.href="farm.html";
 
 
-    },700);
+    },1000);
+
+
+});
 
 
 
-};
+
+// =====================================
+// PAGE LOAD FADE IN
+//=====================================
+
+
+window.addEventListener("load",()=>{
+
+
+    transition.classList.remove("fade-out");
+
+
+});
+

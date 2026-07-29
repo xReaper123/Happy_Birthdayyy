@@ -1,0 +1,661 @@
+/* =======================================
+   Rachel's Valley - Final Heart Event CSS
+   ======================================= */
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+
+    margin: 0;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    font-family: "Press Start 2P", cursive;
+
+    background-image: url("assets/final.gif");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-color: #6fa85a;
+
+}
+
+
+
+
+
+/* =======================================
+   Opening Fade
+   ======================================= */
+
+
+#screen-fade {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: black;
+
+    z-index: 100;
+
+    animation: fadeOut 2s forwards;
+
+}
+
+
+
+@keyframes fadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+}
+
+
+
+
+
+
+/* =======================================
+   Main Scene
+   ======================================= */
+
+
+.valley-scene {
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+}
+
+
+
+
+
+
+
+/* =======================================
+   Intro Text
+   ======================================= */
+
+
+#intro-text {
+
+    position: absolute;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    text-shadow:
+    3px 3px 5px black;
+
+
+    animation:
+    introFade 5s forwards;
+
+}
+
+
+
+
+
+@keyframes introFade {
+
+    0% {
+        opacity: 0;
+    }
+
+
+    20% {
+        opacity: 1;
+    }
+
+
+    80% {
+        opacity: 1;
+    }
+
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+/* =======================================
+   Mailbox Event
+   ======================================= */
+
+
+#mailbox-area {
+
+    display: none;
+
+    position: relative;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    padding: 40px;
+
+    z-index: 10;
+
+    animation:
+    mailboxAppear 1s;
+
+}
+
+
+
+@keyframes mailboxAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+        translateY(50px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+
+
+
+
+#mailbox {
+
+    width: 150px;
+
+    position: relative;
+
+    z-index: 3;
+
+    filter:
+    drop-shadow(0 0 15px gold);
+
+
+    animation:
+    mailboxBounce 2s infinite;
+
+}
+
+
+
+
+#mailbox:hover {
+
+    transform:
+    translateY(-10px);
+
+}
+
+
+
+
+@keyframes mailboxBounce {
+
+    50% {
+
+        transform:
+        translateY(-10px);
+
+    }
+
+}
+
+
+
+
+
+
+
+#mailbox-area p {
+
+    color: white;
+
+    font-size: 12px;
+
+    text-shadow:
+    3px 3px black;
+
+}
+
+
+
+
+
+
+
+/* Mailbox Flag */
+
+
+#mail-flag {
+
+    position: absolute;
+
+    width: 10px;
+
+    height: 45px;
+
+    background: #b63b3b;
+
+    right: 42px;
+
+    top: 35px;
+
+    transform-origin: bottom center;
+
+    transition: .5s;
+
+    z-index: 2;
+
+}
+
+
+
+
+
+
+
+
+
+/* =======================================
+   Junimo Sparkles
+   ======================================= */
+
+
+.sparkles {
+
+    position: absolute;
+
+    top: -40px;
+
+    left: 25px;
+
+    font-size: 35px;
+
+    animation:
+    sparkleFloat 2s infinite;
+
+}
+
+
+
+.sparkle-two {
+
+    left: 120px;
+
+    animation-delay: .8s;
+
+}
+
+
+
+
+
+@keyframes sparkleFloat {
+
+
+    0% {
+
+        opacity: .3;
+
+        transform:
+        translateY(10px)
+        scale(.8);
+
+    }
+
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+        translateY(-20px)
+        scale(1.2);
+
+    }
+
+
+    100% {
+
+        opacity: .3;
+
+        transform:
+        translateY(10px)
+        scale(.8);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/* =======================================
+   Letter
+   ======================================= */
+
+
+#letter-box {
+
+    display: none;
+
+    z-index: 20;
+
+}
+
+
+
+.letter-paper {
+
+    width: 600px;
+
+    max-width: 90%;
+
+    padding: 40px;
+
+    background: #fff0c8;
+
+    border:
+
+    8px solid #8b5a2b;
+
+
+    border-radius: 20px;
+
+
+    color: #4a2b16;
+
+
+    line-height: 2;
+
+
+    box-shadow:
+
+    0 15px 40px black;
+
+
+    animation:
+
+    letterOpen 1s;
+
+}
+
+
+
+
+
+
+@keyframes letterOpen {
+
+
+    from {
+
+        opacity: 0;
+
+        transform:
+
+        scale(.6)
+        translateY(100px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+
+        scale(1)
+        translateY(0);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* =======================================
+   Rachel Scene
+   ======================================= */
+
+
+#rachel-area {
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    z-index: 20;
+
+}
+
+
+
+
+
+#rachel-final {
+
+    width: 220px;
+
+    animation:
+
+    floatRachel 2s infinite;
+
+}
+
+
+
+
+
+@keyframes floatRachel {
+
+
+    50% {
+
+        transform:
+        translateY(-12px);
+
+    }
+
+}
+
+
+
+
+
+
+.speech {
+
+    width: 350px;
+
+    padding: 25px;
+
+    background: white;
+
+    color: #4a2b16;
+
+    border:
+
+    5px solid #8b5a2b;
+
+
+    border-radius: 20px;
+
+
+    line-height: 2;
+
+}
+
+
+
+
+
+
+
+
+
+/* =======================================
+   Ending
+   ======================================= */
+
+
+#ending {
+
+    display: none;
+
+    text-align: center;
+
+    color: white;
+
+    text-shadow:
+
+    4px 4px black;
+
+    z-index: 30;
+
+}
+
+
+
+
+
+#ending h1 {
+
+    font-size: 32px;
+
+}
+
+
+
+
+
+
+
+
+
+/* =======================================
+   Mobile
+   ======================================= */
+
+
+@media(max-width:700px){
+
+
+    #intro-text {
+
+        font-size: 11px;
+
+    }
+
+
+
+    .letter-paper {
+
+        padding: 25px;
+
+        font-size: 10px;
+
+    }
+
+
+
+
+    #rachel-area {
+
+        flex-direction: column;
+
+    }
+
+
+
+
+    #rachel-final {
+
+        width: 160px;
+
+    }
+
+
+
+    .speech {
+
+        width: 85%;
+
+        font-size: 10px;
+
+    }
+
+
+
+}

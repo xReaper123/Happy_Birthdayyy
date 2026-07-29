@@ -298,19 +298,7 @@ musicButton.onclick = ()=>{
 const dialogueMessages=[
 
 
-"Rachel, thank you for making my world brighter every single day. 🌻",
-
-
-"Every moment with you feels like a beautiful adventure.",
-
-
-"You are my favorite person, my biggest smile, and my happiest place.",
-
-
 "I hope today reminds you how loved and appreciated you truly are.",
-
-
-"Thank you for being you. I am so lucky to have you in my life.",
 
 
 "Welcome home, Rachel. Your little valley is waiting for you. 🌸"

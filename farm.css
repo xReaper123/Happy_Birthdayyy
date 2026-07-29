@@ -1,0 +1,1288 @@
+/* =====================================
+   GLOBAL
+===================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+body{
+
+    overflow:hidden;
+
+    font-family:"Press Start 2P", cursive;
+
+    background:#000;
+
+    user-select:none;
+
+}
+
+
+
+
+
+/* =====================================
+   GAME WORLD
+===================================== */
+
+
+#game{
+
+    position:relative;
+
+    width:100vw;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+
+
+/* Background */
+
+
+#background{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:0;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   PLAYER
+===================================== */
+
+
+#player{
+
+    position:absolute;
+
+    width:70px;
+
+    left:45%;
+
+    top:55%;
+
+
+    z-index:20;
+
+
+    image-rendering:pixelated;
+
+
+    transition:
+
+    transform .12s linear;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   WORLD OBJECTS
+===================================== */
+
+
+.object{
+
+    position:absolute;
+
+    width:55px;
+
+    height:55px;
+
+    object-fit:contain;
+
+    z-index:10;
+
+    image-rendering:pixelated;
+
+}
+
+
+
+
+/* Mailbox */
+
+
+.mailbox{
+
+    left:18%;
+
+    top:55%;
+
+}
+
+
+
+
+
+/* Flowers */
+
+
+.flower{
+
+    width:55px;
+
+    cursor:pointer;
+
+    animation:
+
+    flowerSway 2.5s ease-in-out infinite;
+
+}
+
+
+
+
+
+.flower1{
+
+    left:60%;
+
+    top:48%;
+
+}
+
+
+
+.flower2{
+
+    left:66%;
+
+    top:55%;
+
+}
+
+
+
+.flower3{
+
+    left:52%;
+
+    top:62%;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   GIFT OBJECT
+===================================== */
+
+.gift{
+
+    left:73%;
+
+    top:72%;
+
+    width:45px;
+
+    height:45px;
+
+    object-fit:contain;
+
+    image-rendering:pixelated;
+
+    transform-origin:center bottom;
+
+    filter:
+    drop-shadow(0 6px 5px rgba(0,0,0,.45));
+
+
+    animation:
+
+    giftFloat 2.5s ease-in-out infinite,
+
+    giftGlow 1.4s infinite alternate;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+/* Picnic */
+
+
+.picnic{
+
+    left:42%;
+
+    top:74%;
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   HUD
+===================================== */
+
+
+#hud{
+
+    position:absolute;
+
+
+    top:20px;
+
+    left:20px;
+
+    right:20px;
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+
+    z-index:100;
+
+
+    color:white;
+
+
+    text-shadow:
+
+    3px 3px #000;
+
+}
+
+
+
+
+
+
+#day,
+
+#player-info{
+
+
+    background:
+
+    rgba(0,0,0,.35);
+
+
+    padding:15px;
+
+
+    border-radius:12px;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   INTERACTION PROMPT
+===================================== */
+
+
+#interaction{
+
+
+    position:absolute;
+
+
+    bottom:35px;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    display:none;
+
+
+    padding:12px 22px;
+
+
+    background:
+
+
+    linear-gradient(
+
+        #fff4cf,
+
+        #e6c87b
+
+    );
+
+
+
+    border:5px solid #6a3f17;
+
+
+    border-radius:12px;
+
+
+    color:#4c2d14;
+
+
+    z-index:250;
+
+
+
+    box-shadow:
+
+    0 5px #593214;
+
+
+}
+
+/* =====================================
+   QUEST TRACKER
+===================================== */
+
+
+#quest-box{
+
+
+    position:absolute;
+
+
+    left:25px;
+
+
+    bottom:25px;
+
+
+    width:330px;
+
+
+    padding:18px;
+
+
+    background:
+
+
+    linear-gradient(
+
+        #fff7d8,
+
+        #f2d38f
+
+    );
+
+
+
+    border:6px solid #6a3f17;
+
+
+    border-radius:16px;
+
+
+    box-shadow:
+
+
+    0 8px #593214;
+
+
+
+    color:#4b2b14;
+
+
+    line-height:2;
+
+
+    font-size:11px;
+
+
+    z-index:300;
+
+
+}
+
+
+
+
+
+#quest-box h3{
+
+
+    margin-bottom:12px;
+
+
+    text-align:center;
+
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   BIRTHDAY LETTER DIALOGUE
+===================================== */
+
+
+#dialogue-screen{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:
+
+
+    rgba(0,0,0,.65);
+
+
+
+    display:none;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    z-index:500;
+
+
+}
+
+
+
+
+
+
+#dialogue-box{
+
+
+    width:700px;
+
+
+    max-width:90vw;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        #fff9e5,
+
+        #efd59a
+
+    );
+
+
+
+    border:8px solid #6a3f17;
+
+
+    border-radius:20px;
+
+
+
+    padding:35px;
+
+
+
+    color:#4b2b14;
+
+
+
+    line-height:2;
+
+
+
+    box-shadow:
+
+
+    0 12px #593214;
+
+
+
+    animation:
+
+
+    dialogueOpen .35s ease;
+
+
+}
+
+
+
+
+
+
+#dialogue-box h2{
+
+
+    text-align:center;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+
+#dialogue-text{
+
+
+    font-size:11px;
+
+
+}
+
+
+
+
+
+/* =====================================
+   GIFT PRESENT POPUP
+===================================== */
+
+
+.gift-popup{
+
+
+    width:700px;
+
+    max-width:90vw;
+
+
+    background:
+
+    linear-gradient(
+
+        #fff9e5,
+
+        #efd59a
+
+    );
+
+
+    border:8px solid #6a3f17;
+
+
+    border-radius:20px;
+
+
+    padding:35px;
+
+
+    color:#4b2b14;
+
+
+    line-height:2;
+
+
+    box-shadow:
+
+    0 12px #593214;
+
+
+    animation:
+
+    dialogueOpen .35s ease;
+
+
+}
+
+
+
+.gift-popup h2{
+
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+
+}
+
+
+
+.gift-popup p{
+
+
+    font-size:11px;
+
+    text-align:left;
+
+
+}
+
+
+/* =====================================
+   FLOWER COLLECTION POPUP
+===================================== */
+
+
+#flower-dialogue{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+
+    background:
+
+
+    rgba(0,0,0,.55);
+
+
+
+    display:none;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    z-index:600;
+
+
+}
+
+
+
+
+
+
+
+.popup-box{
+
+
+    width:500px;
+
+
+    max-width:90vw;
+
+
+
+    padding:35px;
+
+
+
+    text-align:center;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        #fff9e5,
+
+        #efd59a
+
+    );
+
+
+
+    border:8px solid #6a3f17;
+
+
+    border-radius:20px;
+
+
+
+    color:#4b2b14;
+
+
+
+    box-shadow:
+
+
+    0 12px #593214;
+
+
+
+    animation:
+
+
+    dialogueOpen .35s ease;
+
+
+}
+
+
+
+
+
+
+.popup-box h2{
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+
+#close-dialogue,
+
+
+#flower-close{
+
+
+    display:block;
+
+
+    margin:30px auto 0;
+
+
+
+    padding:15px 35px;
+
+
+
+    font-family:"Press Start 2P";
+
+
+    font-size:11px;
+
+
+
+    cursor:pointer;
+
+
+
+    color:#4b2b14;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        #ffe08d,
+
+        #dba95b
+
+    );
+
+
+
+    border:5px solid #6a3f17;
+
+
+
+    border-radius:14px;
+
+
+
+    box-shadow:
+
+
+    0 6px #593214;
+
+
+
+    transition:.15s;
+
+
+}
+
+
+
+
+
+
+#close-dialogue:hover,
+
+
+#flower-close:hover{
+
+
+    transform:translateY(-4px);
+
+
+}
+
+
+
+
+
+
+#close-dialogue:active,
+
+
+#flower-close:active{
+
+
+    transform:translateY(4px);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+
+@keyframes giftGlow{
+
+
+    from{
+
+
+        filter:
+
+
+        drop-shadow(0 0 5px gold);
+
+
+    }
+
+
+
+    to{
+
+
+        filter:
+
+
+        drop-shadow(0 0 18px yellow);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+@keyframes giftBounce{
+
+
+    50%{
+
+
+        transform:
+
+
+        translateY(-6px);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+@keyframes flowerSway{
+
+
+    25%{
+
+
+        transform:
+
+
+        rotate(-3deg);
+
+
+    }
+
+
+
+    75%{
+
+
+        transform:
+
+
+        rotate(3deg);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+@keyframes dialogueOpen{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:
+
+
+        scale(.85);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+
+
+        scale(1);
+
+
+    }
+
+
+}
+
+/* =====================================
+   QUEST ICONS
+===================================== */
+
+
+.quest-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:15px 0;
+
+}
+
+
+
+.quest-icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    background:
+
+    linear-gradient(
+        #fff4c2,
+        #dca85a
+    );
+
+    border:4px solid #6a3f17;
+
+    border-radius:10px;
+
+    box-shadow:
+
+    0 4px #593214;
+
+    image-rendering:pixelated;
+
+}
+
+
+
+
+
+
+/* Letter */
+
+
+.letter-icon{
+
+    animation:
+
+    letterFloat 2s infinite ease-in-out;
+
+}
+
+
+
+
+
+@keyframes letterFloat{
+
+
+    50%{
+
+        transform:
+
+        translateY(-3px);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* Flower */
+
+
+.flower-icon{
+
+    animation:
+
+    flowerPulse 2s infinite;
+
+}
+
+
+
+
+@keyframes flowerPulse{
+
+
+    50%{
+
+        transform:
+
+        scale(1.1);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   GIFT QUEST ANIMATION
+===================================== */
+
+
+.gift-icon{
+
+    animation:
+
+    giftShake 1.2s infinite,
+
+    giftGlow 1.5s infinite alternate;
+
+}
+
+
+
+
+
+
+
+@keyframes giftShake{
+
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+
+
+20%{
+
+transform:rotate(8deg);
+
+}
+
+
+
+40%{
+
+transform:rotate(-8deg);
+
+}
+
+
+
+60%{
+
+transform:rotate(6deg);
+
+}
+
+
+
+80%{
+
+transform:rotate(-6deg);
+
+}
+
+
+
+100%{
+
+transform:rotate(0deg);
+
+}
+
+
+}
+
+
+
+
+
+
+
+@keyframes giftGlow{
+
+
+from{
+
+
+box-shadow:
+
+0 0 5px gold,
+
+0 4px #593214;
+
+
+}
+
+
+
+to{
+
+
+box-shadow:
+
+0 0 25px yellow,
+
+0 4px #593214;
+
+
+}
+
+
+}
+
+.gift-opened{
+
+    animation:none;
+
+    opacity:.5;
+
+    filter:grayscale(1);
+
+}
+
