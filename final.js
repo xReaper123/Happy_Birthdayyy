@@ -67,12 +67,9 @@ Was created because someone very special deserves a valley of their own.
 
 You bring happiness into my life in ways I cannot explain.
 
-You make ordinary moments feel magical.
-
 Thank you for being my favorite person,
 my best friend,
-and my home.
-
+and the most wonderful person I know.
 
 Happy Birthday Rachel ❤️
 
